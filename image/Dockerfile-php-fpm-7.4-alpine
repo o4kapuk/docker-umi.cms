@@ -60,6 +60,7 @@ RUN set -ex \
            freetype \
            libxslt \
            libmemcached \
+           freetds \
 
     # Install dev dependencies
     && apk add --no-cache --virtual .build-deps \
@@ -70,6 +71,7 @@ RUN set -ex \
            libwebp-dev \
            freetype-dev \
            libxslt-dev \
+           freetds-dev \
 
     # Configure
     && docker-php-ext-configure gd \
@@ -84,6 +86,7 @@ RUN set -ex \
          xsl \
          mysqli \
          pdo_mysql \
+         pdo_dblib \
 
     # Enable pecl-built extensions
     && docker-php-ext-enable \
